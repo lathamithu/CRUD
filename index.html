@@ -1,66 +1,19 @@
 <html>
     <head>
-    <title>HTTP AJAX </title>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <button id="newBtn" class="btn btn-primary btn-block">New Todo</button><br><br>
-        <form id="newForm">
-          <div class="form-group row">
-            <label for="Num" class="col-sm-2 col-form-label">Todo Number</label>
-              <div class="col-sm-10">
-                <input type="number" class="form-control" id="Num" placeholder="Todo Number">
-              </div>
-          </div>
-          <div class="form-group row">
-            <label for="task" class="col-sm-2 col-form-label">Task</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="task" placeholder="Task">
-              </div>
-          </div>
-          
-          <button id="submit" type="submit" class="btn btn-primary">Add</button>
-        </form>
-        
-        <div id="updateFormDiv">
-            <form id="updateForm">
-              <div class="form-group row">
-                  <div class="col-sm-10">
-                    <input type="hidden" class="form-control" id="Id">
-                  </div>
-              </div>
-              <div class="form-group row">
-                <label for="updateNum" class="col-sm-2 col-form-label">Todo Number</label>
-                  <div class="col-sm-10">
-                    <input type="number" class="form-control" id="updateNum" placeholder="Todo Number">
-                  </div>
-              </div>
-              <div class="form-group row">
-                <label for="updateTask" class="col-sm-2 col-form-label">Task</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="updateTask" placeholder="Task">
-                  </div>
-              </div>
-             
-              <button id="update" type="submit" class="btn btn-primary">Update</button>
-            </form>
-        </div>
-        <table id="Table" class="table table-bordered table-hover">
-            <thead>
-                <tr><th>Todo Number</th>
-                <th>Task</th>
-                <th>DB ID</th>
-                <th>Controls</th>
-            </tr>
-            </thead>
-            <tbody id="Body"></tbody>
-        </table>
-    </div>
-
-</body>
+        <title>
+           CRUD
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>Todo List</h1>
+        <p>Task : <input type="text" id="list"></p>
+        <button id="addlist">ADD</button>
+        <button id="getlist">GET</button>
+        <button id="deletelist">DELETE</button>
+    <script src="main.js"></script>
+    </body>
 </html>
