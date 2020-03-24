@@ -1,9 +1,10 @@
 <html>
     <head>
         <title>
-            AJAX
+            CRUD
         </title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="index.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
@@ -19,10 +20,14 @@
                 <td>Year</td>
                 <td><input type="text" id="year"></td>
             </tr>
-            <tr colspan = "2">
-                <td><input type="button" value="add" id="addmovie"></td>
-            </tr>
+            
         </table>
+        <br>
+            <table>
+                <td><input type="button" class="btn btn-primary btn-block" value="ADD" id="addmovie"></td>
+            </table>
+        <br>
+        
         <table border = "1" id="tb1movie">
             <thead>
                 <tr>
