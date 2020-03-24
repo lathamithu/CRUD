@@ -55,7 +55,7 @@
                        var tab1 = $('#tb1movie tbody');
                        tab1.empty();
                        $(data).each(function(i,e){
-                           tab1.append('<tr><td>'+e.title+'</td><td>'+e.year+'</td><td><button id="btn" onclick = "Delete('+e.id+')">Delete</button>'+"     "+'<button id="btn" onclick = "Edit('+e.id+')">Edit</button></td></tr>')
+                           tab1.append('<tr><td>'+title+'</td><td>'+year+'</td><td><button id="btn" onclick = "Delete('+e.id+')">Delete</button>'+"     "+'<button id="btn" onclick = "Edit('+e.id+')">Edit</button></td></tr>')
                        });
                    },
                    error: function (error){
