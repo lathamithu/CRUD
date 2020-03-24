@@ -8,7 +8,7 @@
                 movie.year = $("#year").val();
                 var obj = JSON.stringify(movie);
                 $.ajax({ 
-                    url:'https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies/'+id, 
+                    url:'https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies', 
                     type: 'POST',
                     contentType: 'application/json',
                     data: obj,
