@@ -15,6 +15,7 @@
                     success: function( ){
                         
                         alert("Saved successfully");
+
                         getList();
                         reset();
                         },           
@@ -30,6 +31,7 @@
 
             function Delete(id)
             {
+                $("#delbtn").click(function(){
                 $.ajax({
                     url:'https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies/'+id, 
                     type: 'DELETE',
@@ -41,7 +43,8 @@
                         getList();
                     }
             });
-            }
+        })}
+            
                
       
 
@@ -55,7 +58,7 @@
                        var tab1 = $('#tb1movie tbody');
                        tab1.empty();
                        $(data).each(function(i,e){
-                           tab1.append('<tr><td>'+title+'</td><td>'+year+'</td><td><button id="btn" onclick = "Delete('+e.id+')">Delete</button>'+"     "+'<button id="btn" onclick = "Edit('+e.id+')">Edit</button></td></tr>')
+                           tab1.append('<tr><td>'+e.title+'</td><td>'+e.year+'</td><td><button id="delbtn" onclick = "Delete('+e.id+')">Delete</button>'+'<button id="edbtn" onclick = "Edit('+e.id+')">Edit</button></td></tr>')
                        });
                    },
                    error: function (error){
