@@ -34,7 +34,7 @@ table,tr,th,td{
     background-color:#333333; /* Green */
     color: white;
   }
-  #btn
+  #delbtn,#edbtn
 {
     width: 100%;
     height: 50px;
@@ -46,7 +46,7 @@ table,tr,th,td{
     border-radius: 12px;
     font-size: 18px;
 }
-#btn:hover {
+#delbtn,#edbtn:hover {
     background-color:#333333; /* Green */
     color: white;
   }
