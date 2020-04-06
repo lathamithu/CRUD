@@ -3,7 +3,8 @@ $(document).ready(function(){
     getList();
 
     $("#addmovie").click(function(){
-        movie.title = $("#title").val();
+        if($("#title").val()!="" && $("#year").val()!="")
+        {movie.title = $("#title").val();
         movie.year = $("#year").val();
         var obj = JSON.stringify(movie);
         $.ajax({ 
@@ -23,7 +24,7 @@ $(document).ready(function(){
                 alert( error );
             }
         });
-
+    }
     });
 });
 
@@ -57,7 +58,7 @@ $(document).ready(function(){
                var tab1 = $('#tb1movie tbody');
                tab1.empty();
                $(data).each(function(i,e){
-                   tab1.append('<tr><td>'+e.Title+'</td><td>'+e.Year+'</td><td><button id="delbtn" onclick = "Delete('+e.id+')">Delete</button>'+'<button id="edbtn" onclick = "Edit('+e.id+')">Edit</button></td></tr>')
+                   tab1.append('<tr><td>'+e.Title+'</td><td>'+e.Year+'</td><td><button id="delbtn" onclick = Delete('+e.id+')>Delete</button>'+'<button id="edbtn" onclick = "Edit('+e.id+')">Edit</button></td></tr>')
                });
            },
            error: function (error){
