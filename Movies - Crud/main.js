@@ -29,21 +29,22 @@ $(document).ready(function(){
 });
 
 
-    function Delete(id)
+    function Delete(objectId)
     {
-        $("#delbtn").click(function(){
+        
         $.ajax({
-            url:'https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies/'+id, 
+            url:'https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies/'+objectId, 
             type: 'DELETE',
             success:function(){
                 alert("Deleted");
+                getList();
             },
             error:function(error){
                 alert(error);
                 getList();
             }
     });
-})}
+}
     
        
 
@@ -58,7 +59,7 @@ $(document).ready(function(){
                var tab1 = $('#tb1movie tbody');
                tab1.empty();
                $(data).each(function(i,e){
-                   tab1.append('<tr><td>'+e.Title+'</td><td>'+e.Year+'</td><td><button id="delbtn" onclick = Delete('+e.id+')>Delete</button>'+'<button id="edbtn" onclick = "Edit('+e.id+')">Edit</button></td></tr>')
+                   tab1.append('<tr><td>'+e.Title+'</td><td>'+e.Year+'</td><td><button id="delbtn" onclick = "Delete('+e.objectId+')">Delete</button></td></tr>')
                });
            },
            error: function (error){
