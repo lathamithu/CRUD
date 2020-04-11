@@ -30,8 +30,8 @@ $(document).ready(function(){
 
     
 function Delete()
-{
-    var a='https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies/'+this.objectId;
+{   
+    var a='https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies/5B9EAC90-84DB-9329-FFB1-5D31F5EFCA00';
     $.ajax({
         url:a,
         type: 'DELETE',
