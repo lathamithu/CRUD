@@ -31,7 +31,7 @@ $(document).ready(function(){
     
 function Delete()
 {   
-    var a='https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies/AEC94E7A-CFBD-FE57-FFAB-D819F2A16C00';
+    var a='https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies/3DFDFDD5-CEE9-DA09-FF86-87AA67C38900';
     $.ajax({
         url:a,
         type: 'DELETE',
