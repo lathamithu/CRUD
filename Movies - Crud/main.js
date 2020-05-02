@@ -28,15 +28,8 @@ $(document).ready(function(){
     });
 });
 
-    
-
-       
-       
-
-
-
     function getList(){
-        
+       
         $.ajax({
             url:'https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies',
             type: 'GET',
@@ -45,7 +38,8 @@ $(document).ready(function(){
                var tab1 = $('#tb1movie tbody');
                tab1.empty();
                 $(data).each(function(i,e){
-                   tab1.append('<tr><td>'+e.Title+'</td><td>'+e.Year+'</td><td><button id="delbtn" onclick = '+Delete(this.objectId)+'>Delete</button></td></tr>')
+                   tab1.append('<tr><td>'+e.Title+'</td><td>'+e.Year+'</td><td><button class="delbtn" data-id="'+this.objectId+'" onclick = "Delete(this)">Delete</button></td></tr>');
+                   
                 });
                
            },
@@ -55,11 +49,11 @@ $(document).ready(function(){
         });
    
     } 
-    function Delete(id) 
+    function Delete(btn) 
     {
-    $("#delbtn").click(function(){
-    {   var a ='https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies/'+id;
-       $.ajax({
+        console.log(btn.dataset.id);
+        var a ='https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies/'+btn.dataset.id;
+        $.ajax({
             url:a,
             type: 'DELETE',
             success:function(resp, status, xhr){
@@ -72,10 +66,10 @@ $(document).ready(function(){
                 console.log(JSON.parse(xhr.responseText), xhr);
                 getList();
             }
-    });   
-    }
-});
-    }
+    }); 
+ 
+}
+
     function reset(){
         $('#title').val('');
         $('#year').val('');
