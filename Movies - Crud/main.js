@@ -86,7 +86,7 @@ function Save(obj)
             
             alert("Altered successfully");
             getList();
-            reset();
+
             },              
          
         error: function(error){
