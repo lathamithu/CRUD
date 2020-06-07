@@ -26,7 +26,32 @@ $(document).ready(function(){
         });
     }
     });
+
 });
+
+  function Save(obj){
+
+    var currentRow=$(obj).closest("tr"); 
+    var movie={};
+    movie.title = currentRow.find("td:eq(0)").text();
+    movie.year = currentRow.find("td:eq(1)").text();
+    var ob = JSON.stringify(movie);
+    $.ajax({ 
+        url:'https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies/'+obj.dataset.id, 
+        type: 'PUT',
+        contentType: 'application/json',
+        data:ob,
+        success: function( ){   
+            alert("Altered successfully");
+            getList();
+            },              
+         
+        error: function(error){
+            alert( error );
+        }
+    });
+
+  }
 
 $("td#target").attr("contenteditable", "");
 
@@ -40,7 +65,8 @@ $("td#target").attr("contenteditable", "");
                var tab1 = $('#tb1movie tbody');
                tab1.empty();
                 $(data).each(function(i,e){
-                   tab1.append('<tr><td contenteditable="true" id="sav1">'+e.Title+'</td><td contenteditable="true" id="sav2">'+e.Year+'</td><td><button class="delbtn" data-id="'+this.objectId+'" onclick = "Delete(this)">Delete</button><button class="savbtn" data-id="'+this.objectId+'" onclick = "Save(this)">Save</button></td></tr>');
+                   tab1.append('<tr><td contenteditable="true" >'+e.Title+'</td><td contenteditable="true">'+e.Year+'</td><td><button class="delbtn" data-id="'+this.objectId+'" onclick = "Delete(this)">Delete</button><button class="savbtn" data-id="'+this.objectId+'" onclick = "Save(this)">Save</button></td></tr>');
+                   
                 });
                
            },
@@ -71,29 +97,8 @@ $("td#target").attr("contenteditable", "");
  
 }
 
-function Save(obj)
-{console.log(obj.dataset.id);
-    var movie={};
-    movie.title = $("#sav1").text();
-    movie.year = $("#sav2").text();
-    var ob = JSON.stringify(movie);
-    $.ajax({ 
-        url:'https://api.backendless.com/36DC4E7A-2B33-40D0-A382-FD197E23A89B/BC24AD0C-019C-42A0-BAAD-229B8D8F7222/data/Movies/'+obj.dataset.id, 
-        type: 'PUT',
-        contentType: 'application/json',
-        data:ob,
-        success: function( ){
-            
-            alert("Altered successfully");
-            getList();
 
-            },              
-         
-        error: function(error){
-            alert( error );
-        }
-    });
-}
+
 
   function reset(){
         $('#title').val('');
